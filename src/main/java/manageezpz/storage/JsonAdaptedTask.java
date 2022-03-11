@@ -4,23 +4,25 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import manageezpz.commons.exceptions.IllegalValueException;
-import manageezpz.tasks.Task;
+import manageezpz.model.task.Description;
+import manageezpz.model.task.Task;
 
 /**
- * Jackson-friendly version of {@link manageezpz.tasks.Task}.
+ * Jackson-friendly version of {@link Task}.
  */
 class JsonAdaptedTask {
 
     public static final String MISSING_FIELD_MESSAGE_FORMAT = "Person's %s field is missing!";
 
-    private final String description;
+//    private final String description;
+    private final Description description;
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
      */
     @JsonCreator
     public JsonAdaptedTask(@JsonProperty("description") String description) {
-        this.description = description;
+        this.description = new Description(description);
     }
 
     /**
