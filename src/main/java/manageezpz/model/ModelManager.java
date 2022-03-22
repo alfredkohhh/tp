@@ -13,10 +13,7 @@ import manageezpz.commons.core.GuiSettings;
 import manageezpz.commons.core.LogsCenter;
 import manageezpz.logic.parser.Prefix;
 import manageezpz.model.person.Person;
-import manageezpz.model.task.Deadline;
-import manageezpz.model.task.Event;
-import manageezpz.model.task.Task;
-import manageezpz.model.task.Todo;
+import manageezpz.model.task.*;
 
 /**
  * Represents the in-memory model of the address book data.
@@ -211,6 +208,11 @@ public class ModelManager implements Model {
     public void updateFilteredTaskList(Predicate<Task> predicate) {
         requireNonNull(predicate);
         filteredTasks.setPredicate(predicate);
+    }
+
+    @Override
+    public UniqueTaskList getModifiableTaskList() {
+        return addressBook.getModifiableTaskList();
     }
 
     @Override

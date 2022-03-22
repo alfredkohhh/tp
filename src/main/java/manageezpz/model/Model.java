@@ -7,10 +7,7 @@ import javafx.collections.ObservableList;
 import manageezpz.commons.core.GuiSettings;
 import manageezpz.logic.parser.Prefix;
 import manageezpz.model.person.Person;
-import manageezpz.model.task.Deadline;
-import manageezpz.model.task.Event;
-import manageezpz.model.task.Task;
-import manageezpz.model.task.Todo;
+import manageezpz.model.task.*;
 
 /**
  * The API of the Model component.
@@ -158,6 +155,10 @@ public interface Model {
 
     /** Returns an unmodifiable view of the filtered task list. */
     ObservableList<Task> getFilteredTaskList();
+
+
+    /** Returns a modifiable task list. */
+    UniqueTaskList getModifiableTaskList();
 
     /**
      * Returns true if a task with the same identity as {@code deadline} exists in the task list.

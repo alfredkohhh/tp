@@ -188,7 +188,6 @@ public class AddressBook implements ReadOnlyAddressBook {
         this.persons.setPersons(persons);
     }
 
-
     /**
      * Resets the existing data of this {@code AddressBook} with {@code newData}.
      */
@@ -239,7 +238,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Returns true if a event with the same identity as {@code event} exists in the task list.
+     * Returns true if an event with the same identity as {@code event} exists in the task list.
      */
     public boolean hasEvent(Event event) {
         requireNonNull(event);
@@ -338,6 +337,10 @@ public class AddressBook implements ReadOnlyAddressBook {
     @Override
     public ObservableList<Task> getTaskList() {
         return tasks.asUnmodifiableObservableList();
+    }
+
+    public UniqueTaskList getModifiableTaskList(){
+        return tasks;
     }
 
     @Override
