@@ -201,6 +201,11 @@ public class ModelManager implements Model {
         addressBook.tagTask(task, person);
     }
 
+    @Override
+    public void untagTask(Task task, Person person) {
+        addressBook.untagTask(task, person);
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -228,19 +233,25 @@ public class ModelManager implements Model {
         return task.getAssignees().contains(person);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String listTasks() {
         return addressBook.listTask();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String listTasks(Prefix option) {
         return addressBook.listTask(option);
+    }
+
+    @Override
+    public boolean hasPriority(Task task) {
+        return addressBook.hasPriority(task);
+    }
+
+    @Override
+    public void setTask(Task target, Task editedTask) {
+        requireAllNonNull(target, editedTask);
+
+        addressBook.setTask(target, editedTask);
     }
 }

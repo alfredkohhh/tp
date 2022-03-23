@@ -15,6 +15,11 @@ import manageezpz.model.person.Person;
 public class Task {
     protected boolean isDone;
     protected String type;
+    protected Priority priority;
+
+    enum Priority {
+        LOW, MEDIUM, HIGH;
+    }
 
     // Identity fields
     private final Description taskDescription;
@@ -81,6 +86,14 @@ public class Task {
         return isDone;
     }
 
+    public void setPriority(String priority) {
+        this.priority = Priority.valueOf(priority);
+    }
+
+    public Priority getPriority() {
+        return this.priority;
+    }
+
     /**
      * Returns the string representation of the task.
      * @return a string representation of the task, consisting of its description and whether its done or not.
@@ -105,6 +118,10 @@ public class Task {
 
     public void assignedTo(Person person) {
         assignees.add(person);
+    }
+
+    public void removeAssigned(Person person) {
+        assignees.remove(person);
     }
 
     @Override
