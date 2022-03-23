@@ -6,9 +6,6 @@ import static manageezpz.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-<<<<<<< HEAD
-import manageezpz.logic.commands.*;
-=======
 import manageezpz.logic.commands.AddDeadlineTaskCommand;
 import manageezpz.logic.commands.AddEmployeeCommand;
 import manageezpz.logic.commands.AddEventTaskCommand;
@@ -26,7 +23,6 @@ import manageezpz.logic.commands.MarkTaskCommand;
 import manageezpz.logic.commands.TagTaskCommand;
 import manageezpz.logic.commands.UnmarkTaskCommand;
 import manageezpz.logic.commands.UntagTaskCommand;
->>>>>>> 82b000bf54a2f55f398196d3d73565140b248cbf
 import manageezpz.logic.parser.exceptions.ParseException;
 
 /**
@@ -100,9 +96,6 @@ public class AddressBookParser {
 
         case TagTaskCommand.COMMAND_WORD:
             return new TagTaskCommandParser().parse(arguments);
-
-        case EditTaskCommand.COMMAND_WORD:
-            return new EditTaskCommandParser().parse(arguments);
 
         case UntagTaskCommand.COMMAND_WORD:
             return new UntagTaskCommandParser().parse(arguments);
