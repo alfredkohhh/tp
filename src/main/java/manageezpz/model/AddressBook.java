@@ -339,10 +339,6 @@ public class AddressBook implements ReadOnlyAddressBook {
         return tasks.asUnmodifiableObservableList();
     }
 
-    public UniqueTaskList getModifiableTaskList(){
-        return tasks;
-    }
-
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object

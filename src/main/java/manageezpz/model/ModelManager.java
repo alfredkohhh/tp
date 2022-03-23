@@ -211,11 +211,6 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public UniqueTaskList getModifiableTaskList() {
-        return addressBook.getModifiableTaskList();
-    }
-
-    @Override
     public ObservableList<Task> getFilteredTaskList() {
         return filteredTasks;
     }
@@ -232,7 +227,6 @@ public class ModelManager implements Model {
         requireNonNull(person);
         return task.getAssignees().contains(person);
     }
-
 
     /**
      * {@inheritDoc}

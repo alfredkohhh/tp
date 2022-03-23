@@ -2,6 +2,7 @@ package manageezpz.logic.commands;
 
 import manageezpz.logic.commands.exceptions.CommandException;
 import manageezpz.model.Model;
+import manageezpz.model.task.UniqueTaskList;
 
 public class EditTaskCommand extends Command{
     public static final String COMMAND_WORD = "editTask";

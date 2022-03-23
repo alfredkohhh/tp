@@ -156,10 +156,6 @@ public interface Model {
     /** Returns an unmodifiable view of the filtered task list. */
     ObservableList<Task> getFilteredTaskList();
 
-
-    /** Returns a modifiable task list. */
-    UniqueTaskList getModifiableTaskList();
-
     /**
      * Returns true if a task with the same identity as {@code deadline} exists in the task list.
      */
